@@ -14,11 +14,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-               
-            }, label: {
-                Text("Back")
-            })
             ScrollView {
                 LazyVStack {
                     if (module.currentModule != nil) {
@@ -59,10 +54,9 @@ struct ContentView: View {
                     }
             
                 }
-        
             }.accentColor(.black)
-
         }
+        .navigationBarTitle("Learn \(module.currentModule?.category ?? "")")
     }
 }
 

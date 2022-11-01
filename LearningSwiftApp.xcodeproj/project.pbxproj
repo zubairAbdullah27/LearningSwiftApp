@@ -23,6 +23,7 @@
 		04C62C23291047A900423F0E /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C62C22291047A900423F0E /* AVKit.framework */; };
 		04C62C2529105DFF00423F0E /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C62C2429105DFF00423F0E /* CodeTextView.swift */; };
 		04C62C2729106F7F00423F0E /* ButtonRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C62C2629106F7F00423F0E /* ButtonRectangleView.swift */; };
+		04C62C29291130C300423F0E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C62C28291130C300423F0E /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		04C62C22291047A900423F0E /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.0.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
 		04C62C2429105DFF00423F0E /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		04C62C2629106F7F00423F0E /* ButtonRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRectangleView.swift; sourceTree = "<group>"; };
+		04C62C28291130C300423F0E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				04AE094E290E5033002A01B3 /* HomeView.swift */,
 				04AE096A290E96B8002A01B3 /* ContentCard.swift */,
 				04AE096C290E9FD4002A01B3 /* ContentView.swift */,
+				04C62C28291130C300423F0E /* TestView.swift */,
 				04C62C1D29102A0600423F0E /* ContentDetailView.swift */,
 				04C62C2429105DFF00423F0E /* CodeTextView.swift */,
 				04C62C2629106F7F00423F0E /* ButtonRectangleView.swift */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C62C29291130C300423F0E /* TestView.swift in Sources */,
 				04AE0965290E51A7002A01B3 /* dataservice.swift in Sources */,
 				04AE0967290E51B0002A01B3 /* LessonModel.swift in Sources */,
 				04AE094F290E5033002A01B3 /* HomeView.swift in Sources */,

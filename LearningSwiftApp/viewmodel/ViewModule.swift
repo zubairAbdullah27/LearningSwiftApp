@@ -20,10 +20,17 @@ class Module: ObservableObject {
     @Published var currentLesson : Lesson?
     @Published var currentLessonIndex = 0
     //current lesson explanation
-    @Published var currentLessonExplanation = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     
-    //current selected content and test
+    //current selected content and test selection
     @Published var currentContentSelected: Int?
+    @Published var currentTestSelected: Int?
+    
+    //get current test and test index
+    @Published var currentQuizSelected: Question?
+    @Published var currentQuizIndex = 0
+    
+    
     
     init (){
         let moduleData = DataService.getLessonData()
@@ -50,11 +57,11 @@ class Module: ObservableObject {
             currentLessonIndex = lessonIndex
         }
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        currentLessonExplanation = getCurrentLessonHTML(currentLesson!.explanation)
+        codeText = addHtmlStyling(currentLesson!.explanation)
     }
     
     //MARK: - join the style data
-    func getCurrentLessonHTML (_ htmlString:String) -> NSAttributedString {
+    func addHtmlStyling (_ htmlString:String) -> NSAttributedString {
         var resultString = NSAttributedString();
         var data = Data()
         if(stylesData != nil){
@@ -85,10 +92,22 @@ class Module: ObservableObject {
         if(hasNextLesson()){
             currentLessonIndex = lessonId + 1
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
-            currentLessonExplanation = getCurrentLessonHTML(currentLesson!.explanation)
+            codeText = addHtmlStyling(currentLesson!.explanation)
         }else {
             currentLesson = nil
             currentLessonIndex = 0
+        }
+    }
+    
+    //MARK: - current test and test index
+    func  getCurrentQuiz (_ moduleId:Int) {
+        getCurrentModule(moduleId);
+        //quiz index
+        currentQuizIndex = 0
+        //get current quiz index
+        if(currentModule?.test.questions.count ?? 0 > 0){
+            currentQuizSelected =  currentModule!.test.questions[currentQuizIndex]
+            codeText = addHtmlStyling(currentQuizSelected!.content)
         }
     }
 }

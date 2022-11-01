@@ -31,9 +31,14 @@ struct HomeView: View {
                             label : {
                             ContentCard(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, lessonNumber: "\(module.content.lessons.count) Lesson", time: module.content.time)
                         })
-                        NavigationLink(destination:{
-                            
-                        } , label: {
+                        NavigationLink(destination:
+                            TestView().onAppear(perform: {
+                            model.getCurrentQuiz(module.id)
+                        })
+                        ,
+                                       tag: module.id,
+                                       selection: $model.currentTestSelected
+                        , label: {
                             ContentCard(image: module.test.image, title: "Learn \(module.category)", description: module.test.description, lessonNumber: "\(module.test.questions.count) Test", time: module.test.time)
                         })
                     }
